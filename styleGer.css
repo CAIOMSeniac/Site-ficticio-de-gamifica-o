@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@100&family=Roboto+Mono:wght@300&family=VT323&display=swap');
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: rgb(0, 0, 0);
+    font-family: 'Roboto Mono', monospace;
+}
