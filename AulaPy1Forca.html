@@ -58,12 +58,15 @@
 </pre>
 <p>Uma das linhas do código tem um erro, qual é a linha?</p>
 <input type="number" class="form-control finp" id="Resposta" placeholder="Linha que está com o erro" aria-describedby="basic-addon1" min="0" max="40" step="1">
+
+<br>
+
 <button class="btn btn-secondary">Validar</button>
 <p id="validacao">
 
 
 </p>
-<h2 id="list-item-4">Certificado</h2>
+<h2 id="list-item-4">CONCLUSÃO DA AULA</h2>
 <div id="conclusao">
 </div>
 </div>
@@ -88,7 +91,7 @@
                 <a class="list-group-item-action itemListAula" href="#list-item-1">Video Aula</a>
                 <a class="list-group-item-action itemListAula" href="#list-item-2">Material</a>
                 <a class="list-group-item-action itemListAula" href="#list-item-3">Atividade</a>
-                <a class="list-group-item-action itemListAula" href="#list-item-4">Emitir Certificado</a>
+                <a class="list-group-item-action itemListAula" href="#list-item-4">Concluir</a>
             </div>
             <a class="list-group-item-action itemListAula" href="Dashboard.html">DashBoard</a>
       </div>
@@ -123,7 +126,7 @@ async function respostaCerta(){
   await Dalay(0.5);
   $('#validacao').prepend("<p class='InputCMD'>:>start CONCLUSÃO.exe</p>");
   await Dalay(1);
-  $('#conclusao').prepend("<button class='btn btn-secondary'>EMITIR CERTIFICADO</button><br>");
+  $('#conclusao').prepend("<button class='btn btn-secondary'>CONCLUIR AULA</button><br>");
 }
 
 async function respostaErrada(){
