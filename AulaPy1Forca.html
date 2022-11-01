@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="styleGer.css">
 </head>
-<body>
+<div>
 <button class="btn btn-dark  btn-men-Aula" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
     <i class="fas fa-bars"></i>
 </button>
@@ -57,15 +57,19 @@
 <code>print(palavraSecreta[3])</code>
 </pre>
 <p>Uma das linhas do código tem um erro, qual é a linha?</p>
-<input type="number" class="form-control finp" placeholder="Linha que está com o erro" aria-describedby="basic-addon1" min="0" max="40" step="1">
+<input type="number" class="form-control finp" id="Resposta" placeholder="Linha que está com o erro" aria-describedby="basic-addon1" min="0" max="40" step="1">
+<button class="btn btn-secondary">Validar</button>
+<p id="validacao">
 
 
+</p>
 <h2 id="list-item-4">Certificado</h2>
-
+<div id="conclusao">
+</div>
+</div>
 </div>
 
-
-
+<br>
 
 
 
@@ -92,3 +96,54 @@
   </div>
 </body>
 </html>
+
+<script type="text/javascript">
+  let resposta;
+$("#Resposta").bind('keyup change click', function (e) {
+  resposta = $(this).val();
+
+});
+
+$(".btn").on('click', function (e) {
+  if (resposta == 8){
+    respostaCerta();
+  }else{
+    respostaErrada();
+  }
+});
+async function respostaCerta(){
+  $('#validacao').prepend("<p class='InputCMD'>:>CLS</p>");
+  await Dalay(1);
+  $('#validacao').empty();
+  $('#validacao').prepend("<p class='extCMD'>...</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='extCMD'>verificando...</p>");
+  await Dalay(1);
+  $('#validacao').prepend("<p class='extCMD'>CORRETO</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='InputCMD'>:>start CONCLUSÃO.exe</p>");
+  await Dalay(1);
+  $('#conclusao').prepend("<button class='btn btn-secondary'>EMITIR CERTIFICADO</button><br>");
+}
+
+async function respostaErrada(){
+  $('#validacao').prepend("<p class='InputCMD'>:>CLS</p>");
+  await Dalay(1);
+  $('#validacao').empty();
+  $('#validacao').prepend("<p class='extCMD'>...</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='extCMD'>verificando...</p>");
+  await Dalay(1);
+  $('#validacao').prepend("<p class='exterrCMD'>FALHA</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='extCMD'>tente novamente...</p>");
+  await Dalay(1);
+}
+const Dalay = (n) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, n * 1000);
+  });
+}
+</script>
