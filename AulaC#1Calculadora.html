@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+    <link rel="icon" type="imagem/png" href="https://cdn1.iconfinder.com/data/icons/internet-28/48/84-512.png"/>
+    <!-- LINKS DO BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" type="text/css" href="styleGer.css">
+</head>
+<div>
+<button class="btn btn-dark  btn-men-Aula" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="container  AulaCont">
+        <h1>Aula de C#</h1>
+        <h2 id="list-item-1">Video Aula</h2>
+        <div class="embed-responsive embed-responsive-16by9  video">
+          <video controls>
+            <source src="" type="video/mp4">
+          </video>
+        </div>
+
+
+
+
+        <h2 id="list-item-2">Material</h2>
+        <p>para programar em C#: <a href="https://visualstudio.microsoft.com/pt-br/vs/community/" target="_blank">Baixar Visual Studio</a></p>
+        <p>Documentação do C#: <a href="https://learn.microsoft.com/pt-br/dotnet/csharp/" target="_blank">Documentação</a></p>
+        <p>Documentação do Windows Form: <a href="https://learn.microsoft.com/en-us/dotnet/desktop/winforms/?view=netdesktop-6.0" target="_blank">Documentação</a></p>
+
+
+
+
+<h2 id="list-item-3">Atividade</h2>
+<pre>
+<code>string primeiroValor = "15";</code>
+<code>int segundoValor = 15;</code>
+<code>string operacao = "+";</code>
+<code>if (operacao == "+")</code>
+<code>print(palavraSecreta[1])</code>
+<code>{</code>
+<code>int resultado = primeiroValor + segundoValor;</code>
+<code>}</code>
+<code>Console.WriteLine(resultado);</code>
+</pre>
+<p>Uma das linhas do código tem um erro, qual é a linha?</p>
+<input type="number" class="form-control finp" id="Resposta" placeholder="Linha que está com o erro" aria-describedby="basic-addon1" min="0" max="40" step="1">
+
+<br>
+
+<button class="btn btn-secondary" id="btn_val">Validar</button>
+<p id="validacao">
+
+
+</p>
+<h2 id="list-item-4">CONCLUSÃO DA AULA</h2>
+<div id="conclusao">
+</div>
+</div>
+</div>
+
+<br>
+
+
+
+
+
+
+<div class="offcanvas offcanvas-start CanvAula" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Aula:...</h5>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <p><h5>Conteudos:</h5></p>
+
+              <div id="list-example" class="list-group itemListAula">
+                <a class="list-group-item-action itemListAula" href="#list-item-1">Video Aula</a>
+                <a class="list-group-item-action itemListAula" href="#list-item-2">Material</a>
+                <a class="list-group-item-action itemListAula" href="#list-item-3">Atividade</a>
+                <a class="list-group-item-action itemListAula" href="#list-item-4">Concluir</a>
+            </div>
+            <a class="list-group-item-action itemListAula" href="Dashboard.html">DashBoard</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+  let resposta;
+$("#Resposta").bind('keyup change click', function (e) {
+  resposta = $(this).val();
+
+});
+
+$("#btn_val").on('click', function (e) {
+  if (resposta == 7){
+    respostaCerta();
+  }else{
+    respostaErrada();
+  }
+});
+async function respostaCerta(){
+  $('#validacao').prepend("<p class='InputCMD'>:>CLS</p>");
+  await Dalay(1);
+  $('#validacao').empty();
+  $('#conclusao').empty();
+  $('#validacao').prepend("<p class='extCMD'>...</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='extCMD'>verificando...</p>");
+  await Dalay(1);
+  $('#validacao').prepend("<p class='extCMD'>CORRETO</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='InputCMD'>:>start CONCLUSÃO.exe</p>");
+  await Dalay(1);
+  $('#conclusao').prepend("<button class='btn btn-secondary'>CONCLUIR AULA</button><br>");
+}
+
+async function respostaErrada(){
+  $('#validacao').prepend("<p class='InputCMD'>:>CLS</p>");
+  await Dalay(1);
+  $('#validacao').empty();
+  $('#validacao').prepend("<p class='extCMD'>...</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='extCMD'>verificando...</p>");
+  await Dalay(1);
+  $('#validacao').prepend("<p class='exterrCMD'>FALHA</p>");
+  await Dalay(0.5);
+  $('#validacao').prepend("<p class='extCMD'>tente novamente...</p>");
+  await Dalay(1);
+}
+const Dalay = (n) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, n * 1000);
+  });
+}
+</script>
