@@ -41,23 +41,17 @@
 
 <h2 id="list-item-3">Atividade</h2>
 <pre>
-<code>palavraSecreta = ""</code>
-<code>print(palavraSecreta)</code>
-<code>palavraSecreta = "Curso"</code>
-<code>print(palavraSecreta[2:])</code>
-<code>print(palavraSecreta[1])</code>
-<code>numero = len(palavraSecreta)</code>
-<code>print(numero)</code>
-<code>print(palavraSecreta[numero])</code>
-<code>palavraSecreta[:4]</code>
-<code>palavraSecreta = """</code>
-<code>TEXTO GRANDE</code>
-<code>"""</code>
-<code>palavraSecreta[2]</code>
-<code>print(palavraSecreta[3])</code>
+<code>lista = ["banana","maca"]</code>
+<code>usuarioInput = 1</code>
+<code>if usuarioInput <span>&lt;</span> 1:</code>
+<code> print("voce escolheu: "+ lista[0])</code>
+<code>???? usuarioInput <span>&lt;</span> 2:</code>
+<code> print("voce escolheu: "+ lista[1])</code>
+<code>else:</code>
+<code> print("FALHA OPÇÃO: " + str(usuarioInput) + " NÃO DEFINIDA")</code>
 </pre>
-<p>Uma das linhas do código tem um erro, qual é a linha?</p>
-<input type="number" class="form-control finp" id="Resposta" placeholder="Linha que está com o erro" aria-describedby="basic-addon1" min="0" max="40" step="1">
+<p>Complete com as informações do curso a opção adequada para substituir o "????"</p>
+<input type="text" class="form-control finp" id="Resposta" placeholder="????" aria-describedby="basic-addon1" min="0" max="40" step="1">
 
 <br>
 
@@ -108,7 +102,7 @@ $("#Resposta").bind('keyup change click', function (e) {
 });
 
 $("#btn_val").on('click', function (e) {
-  if (resposta == 8){
+  if (resposta == "elif"){
     respostaCerta();
   }else{
     respostaErrada();
